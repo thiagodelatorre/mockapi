@@ -6,6 +6,11 @@ let nextId = {};
 
 http.createServer(function (req, res) {
     try {
+        res.setHeader('Access-Control-Allow-Origin', '*');
+        res.setHeader('Access-Control-Request-Method', '*');
+        res.setHeader('Access-Control-Allow-Methods', 'OPTIONS, GET, POST, DELETE, PUT');
+        res.setHeader('Access-Control-Allow-Headers', '*');
+
         paths = req.url.split('/')
         collection = paths[1]
 
